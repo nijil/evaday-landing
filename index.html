@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexIris - Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Stylish Contact Form</title>
     <style>
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,100 +13,119 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: #f0f4f8;
             color: #333;
-            background: linear-gradient(to right, #f4f4f9, #e8e8ee);
+        }
+
+        /* Center Container */
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 2rem;
         }
 
-        .container {
+        /* Form Styling */
+        .form-wrapper {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-wrapper h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
             text-align: center;
-            padding: 20px;
         }
 
-        .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-
-        .description {
+        .form-wrapper p {
             font-size: 1rem;
-            font-weight: 400;
-            color: #2c3e50;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            margin-bottom: 2rem;
+            color: #555;
+            text-align: center;
         }
 
-        .coming-soon {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #e74c3c;
-            margin-bottom: 20px;
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #444;
         }
 
-        .email-input {
-            padding: 10px 15px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            width: 300px;
-            max-width: 100%;
+            font-size: 1rem;
         }
 
-        .notify-button {
-            background-color: #2ecc71;
-            color: #fff;
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 0.8rem;
             border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
             border-radius: 5px;
             cursor: pointer;
-            margin-left: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s;
         }
 
-        .notify-button:hover {
-            background-color: #27ae60;
+        button:hover {
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
         }
 
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #95a5a6;
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-wrapper {
+                padding: 1.5rem;
+            }
+
+            .form-wrapper h2 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">NexIris</h1>
-        <p class="subtitle">Navigating Complexity, Simplified</p>
-        <p class="coming-soon">Coming Soon</p>
-        <p class="description">
-            NexIris is an AI-driven platform designed to simplify India's legal, regulatory, 
-            and compliance landscape. Whether you're an individual seeking to understand 
-            laws and taxes or a professional staying updated, NexIris empowers you with 
-            accurate, actionable, and easy-to-understand insights—all in one place.
-        </p>
-        <div>
-            <input type="email" class="email-input" placeholder="Enter your email to stay updated">
-            <button class="notify-button">Notify Me</button>
+        <div class="form-wrapper">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Fill out the form below and we'll get back to you shortly!</p>
+            <!-- Form Integration with Formspree -->
+            <form action="https://formspree.io/f/myzybzyy" method="POST">
+                <label>
+                    Your email:
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </label>
+                <label>
+                    Your message:
+                    <textarea name="message" placeholder="Type your message here..." required></textarea>
+                </label>
+                <button type="submit">Send</button>
+            </form>
         </div>
-        <footer>
-            &copy; 2024 NexIris. All Rights Reserved.
-        </footer>
     </div>
 </body>
 </html>
